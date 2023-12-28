@@ -10,3 +10,5 @@ screen -S server -d -m ./serve.sh
 
 echo "Starting runner..."
 screen -S runner -d -m ./schedule.sh
+
+echo "Finished setup!"
