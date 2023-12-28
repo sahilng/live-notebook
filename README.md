@@ -1,4 +1,5 @@
-# notebook-scheduler
+# live-notebook
+## A self-updating jupyter notebook -> HTML webserver
 
 ```
 ./setup.sh
