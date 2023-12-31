@@ -13,7 +13,17 @@
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8080]
+	"forwardPorts": [
+		8080
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-toolsai.jupyter"
+			]
+		}
+	}
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	//"postCreateCommand": "./setup.sh"
