@@ -2,7 +2,7 @@
 ## A self-updating jupyter notebook -> HTML webserver
 
 ```sh
-docker build -t live-notebook:latest .
+docker build -t live-notebook .
 ```
 
 
