@@ -45,7 +45,7 @@ while true
 do
     sleep 60
     log "Installing any new notebook dependencies..."
-    pip install --root-user-action=ignore -r requirements.txt --quiet
+    pip install -qq -r requirements.txt
     python -m jupyter nbconvert "$LIVE_NOTEBOOK" \
         --to html \
         --execute \
