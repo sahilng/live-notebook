@@ -33,6 +33,8 @@ log "Looping to rerun the conversion every 60 seconds..."
 while true
 do
     sleep 60
+    log "Installing any new notebook dependencies..."
+    pip install --no-cache-dir -r requirements.txt --quiet
     python -m jupyter nbconvert "$LIVE_NOTEBOOK" \
         --to html \
         --execute \
