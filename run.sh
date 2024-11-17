@@ -24,4 +24,4 @@ log "Building container image..."
 docker build -t live-notebook .
 
 log "Running container..."
-docker run -p 8080:8080 -e LIVE_NOTEBOOK=$LIVE_NOTEBOOK -v ./$LIVE_NOTEBOOK:/app/$LIVE_NOTEBOOK.ipynb -v ./web:/app/web -d live-notebook
+docker run -p 8080:8080 -e LIVE_NOTEBOOK=$LIVE_NOTEBOOK -v ./$LIVE_NOTEBOOK:/app/$LIVE_NOTEBOOK.ipynb -d live-notebook
