@@ -4,17 +4,6 @@ log() {
     echo "$(date +"%Y-%m-%d %H:%M:%S") - $1"
 }
 
-log "Checking if .env file exists..."
-if [ ! -f .env ]; then
-    log "Error: .env file not found."
-    exit 1
-fi
-
-log "Exporting all variables in the .env file..."
-set -a
-source .env
-set +a
-
 log "Checking if LIVE_NOTEBOOK is set..."
 if [ -z "$LIVE_NOTEBOOK" ]; then
     log "Error: LIVE_NOTEBOOK environment variable is not set."

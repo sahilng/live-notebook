@@ -5,15 +5,12 @@ log() {
 }
 
 log "Checking if .env file exists..."
-if [ ! -f .env ]; then
-    log "Error: .env file not found."
-    exit 1
+if [ -f .env ]; then
+    log "Exporting all variables in the .env file..."
+    set -a
+    source .env
+    set +a
 fi
-
-log "Exporting all variables in the .env file..."
-set -a
-source .env
-set +a
 
 log "Checking if LIVE_NOTEBOOK is set..."
 if [ -z "$LIVE_NOTEBOOK" ]; then
@@ -27,4 +24,4 @@ log "Building container image..."
 docker build -t live-notebook .
 
 log "Running container..."
-docker run -p 8080:8080 -v ./$LIVE_NOTEBOOK:/app/$LIVE_NOTEBOOK.ipynb -v ./web:/app/web -d live-notebook
+docker run -p 8080:8080 -e LIVE_NOTEBOOK=$LIVE_NOTEBOOK -v ./$LIVE_NOTEBOOK:/app/$LIVE_NOTEBOOK.ipynb -v ./web:/app/web -d live-notebook
