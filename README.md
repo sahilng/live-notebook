@@ -13,7 +13,11 @@ docker run -p 8080:8080 -e LIVE_NOTEBOOK=$LIVE_NOTEBOOK -v ./requirements.txt:/a
 ### Running from source:
 - Create `.env` based on `.env.example`
 - Add any necessary notebook dependencies to `requirements.txt`
-- Build and run the container:
+- Start the service locally with: (kill the server using the PID from `lsof -i :8080` after exiting the script)
+    ```sh
+    ./start.sh
+    ```
+- Or build and run the container:
     ```sh
     ./run.sh
     ```

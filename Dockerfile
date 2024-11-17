@@ -4,9 +4,6 @@ FROM python:3.11
 # Set the working directory
 WORKDIR /app
 
-# Install Jupyter and nbconvert without cache and with root action ignored
-RUN pip install --no-cache-dir --root-user-action=ignore jupyter nbconvert
-
 # Copy the "web-template" directory into "/app/web-template" in the container
 COPY web-template /app/web-template
 
