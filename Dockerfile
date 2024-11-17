@@ -14,10 +14,6 @@ RUN pip install --no-cache-dir jupyter nbconvert
 # Copy the rest of the files into the container
 COPY . .
 
-# Copy the run script and make it executable
-COPY run.sh /app/run.sh
-RUN chmod +x /app/run.sh
-
 # Expose port 8080 for the web server
 EXPOSE 8080
 
