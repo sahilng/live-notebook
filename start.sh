@@ -16,7 +16,7 @@ log "Creating the output directory if it doesn't exist..."
 mkdir -p web
 
 log "Installing notebook dependencies..."
-pip install --no-cache-dir -r requirements.txt
+pip install -r requirements.txt
 
 log "Running initial conversion of the notebook to HTML"
 python -m jupyter nbconvert "$LIVE_NOTEBOOK" \
@@ -34,7 +34,7 @@ while true
 do
     sleep 60
     log "Installing any new notebook dependencies..."
-    pip install --no-cache-dir -r requirements.txt --quiet
+    pip install -r requirements.txt --quiet
     python -m jupyter nbconvert "$LIVE_NOTEBOOK" \
         --to html \
         --execute \
