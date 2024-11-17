@@ -15,6 +15,9 @@ log "Environment variables loaded successfully. LIVE_NOTEBOOK is set to $LIVE_NO
 log "Creating the output directory if it doesn't exist..."
 mkdir -p web
 
+log "Installing notebook dependencies..."
+pip install --no-cache-dir -r requirements.txt
+
 log "Running initial conversion of the notebook to HTML"
 python -m jupyter nbconvert "$LIVE_NOTEBOOK" \
     --to html \
