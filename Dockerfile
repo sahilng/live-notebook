@@ -5,7 +5,7 @@ FROM python:3.11
 WORKDIR /app
 
 # Install Jupyter and nbconvert
-RUN pip install --no-cache-dir jupyter nbconvert
+RUN pip install --no-cache-dir --root-user-action=ignore jupyter nbconvert
 
 # Copy the files into the container
 COPY . .
