@@ -11,9 +11,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Install Jupyter and nbconvert
 RUN pip install --no-cache-dir jupyter nbconvert
 
-# Copy the Jupyter notebook and template into the container
-COPY live.ipynb /app/live.ipynb
-COPY web-template /app/web-template
+# Copy the rest of the files into the container
+COPY . .
 
 # Copy the run script and make it executable
 COPY run.sh /app/run.sh
@@ -23,4 +22,4 @@ RUN chmod +x /app/run.sh
 EXPOSE 8080
 
 # Run the script
-CMD ["./run.sh"]
+CMD ["./start.sh"]
